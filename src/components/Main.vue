@@ -60,10 +60,11 @@ const startHistorySearch = async () => {
     ElMessage.error('请输入您的学号')
   } else {
     let historySearchRet = await historySearch(username.value, studentId.value)
-    // console.log(historySearchRet)
+    console.log(historySearchRet)
     const status_ = historySearchRet.status
+    console.log(status_)
     if (status_ === 200){
-      historyTableData.value = historySearchRet
+      historyTableData.value = historySearchRet.result
     }else{
       const msg = historySearchRet.msg
       ElMessage.error(msg)
