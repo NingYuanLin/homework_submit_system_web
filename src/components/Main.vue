@@ -64,6 +64,8 @@ const startHistorySearch = async () => {
     const status_ = historySearchRet.status
     console.log(status_)
     if (status_ === 200){
+      let result = historySearchRet.result
+      ElMessage.success("共查询出" + result.length + '条结果')
       historyTableData.value = historySearchRet.result
     }else{
       const msg = historySearchRet.msg
