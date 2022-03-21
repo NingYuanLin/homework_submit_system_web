@@ -17,7 +17,8 @@ let historyTableData = ref([])
 
 const beforeAvatarUpload = (file: UploadRawFile) => {
   console.log(file.type)
-  const isRightFilePostfix = file.type === 'application/zip'
+  const isRightFilePostfix = file.type === 'application/zip' || file.type === 'application/octet-stream' || file.type === 'application/x-zip-compressed';
+  // const isRightFilePostfix = file.type === 'application/zip'
   const isLt100M = file.size / 1024 / 1024 < 100
   const isUsername = username.value != ''
   const isStudentId = studentId.value != ''
