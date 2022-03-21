@@ -9,7 +9,7 @@ import axios from 'axios'
 
 // 创建axios服务
 const service = axios.create({
-    timeout: 1000 * 10, // 超时
+    timeout: 1000 * 300, // 超时 300s
     withCredentials: false // 跨域携带cookie
 })
 
