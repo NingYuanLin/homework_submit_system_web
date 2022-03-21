@@ -39,13 +39,13 @@ const beforeAvatarUpload = (file: UploadRawFile) => {
 const startUploadFile = async (params: any) => {
   // console.log(params)
   ElMessage.info('正在上传文件，请稍等~')
-  let uploadFileRet = await uploadFile(username.value, studentId.value, params.file)
+  let uploadFileRet = await uploadFile(username.value, studentId.value, params.file, params)
   // console.log(uploadFileRet)
   const status_ = uploadFileRet.status
   const msg = uploadFileRet.msg
-  if (status_ === 200){
+  if (status_ === 200) {
     ElMessage.success(msg)
-  }else{
+  } else {
     ElMessage.error(msg)
   }
 }
@@ -64,11 +64,11 @@ const startHistorySearch = async () => {
     console.log(historySearchRet)
     const status_ = historySearchRet.status
     console.log(status_)
-    if (status_ === 200){
+    if (status_ === 200) {
       let result = historySearchRet.result
       ElMessage.success("共查询出" + result.length + '条结果')
       historyTableData.value = historySearchRet.result
-    }else{
+    } else {
       const msg = historySearchRet.msg
       ElMessage.error(msg)
     }

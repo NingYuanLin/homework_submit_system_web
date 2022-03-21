@@ -22,3 +22,7 @@ npm run dev
 npm run build
 ```
 > 如果无法打包，可以使用`vite build`
+
+## 遗留问题
+* 移动端适配问题  
+* 上传文件名过长时，异常布局问题
