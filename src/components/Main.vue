@@ -17,13 +17,13 @@ let historyTableData = ref([])
 
 const beforeAvatarUpload = (file: UploadRawFile) => {
   console.log(file.type)
-  const isPDF = file.type === 'application/pdf'
+  const isRightFilePostfix = file.type === 'application/zip'
   const isLt100M = file.size / 1024 / 1024 < 100
   const isUsername = username.value != ''
   const isStudentId = studentId.value != ''
 
-  if (!isPDF) {
-    ElMessage.error('请上传PDF格式的文件!')
+  if (!isRightFilePostfix) {
+    ElMessage.error('请上传zip格式的文件!')
   } else if (!isLt100M) {
     ElMessage.error('文件大小不要超过 100MB!')
   } else if (!isUsername) {
@@ -32,7 +32,7 @@ const beforeAvatarUpload = (file: UploadRawFile) => {
     ElMessage.error('请输入您的学号')
   }
 
-  return isPDF && isLt100M && isUsername && isStudentId
+  return isRightFilePostfix && isLt100M && isUsername && isStudentId
 }
 
 const startUploadFile = async (params: any) => {
@@ -131,7 +131,7 @@ const startHistorySearch = async () => {
             </div>
             <template #tip>
               <div class="el-upload__tip">
-                文件不能大于100M
+                文件不能大于100M,必须上传zip格式
               </div>
             </template>
           </el-upload>
