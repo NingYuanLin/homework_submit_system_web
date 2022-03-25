@@ -108,16 +108,16 @@ const startHistorySearch = async () => {
     <div
         style="display: flex;flex-direction: row;width: 80%;border-width: 1px 1px 1px 1px;border-style:solid;border-color:#eee;">
       <div
-          style="width: 50%;border-width: 0 1px 0 0;border-style:solid;border-color:#eee;display: flex;align-items: center;flex-direction: column">
+          style="width: 50%;border-width: 0 1px 0 0;border-style:solid;border-color:#eee;text-align: center">
         <div>
           <h2>
             论文提交
           </h2>
         </div>
 
-        <div style="margin-top: 5px">
+        <div style="margin-top: 5px;display:block;max-width: 100%">
           <el-upload
-              class="upload-demo"
+              class="my-upload-dragger upload-demo"
               drag
               action=""
               multiple
@@ -139,13 +139,13 @@ const startHistorySearch = async () => {
         </div>
 
       </div>
-      <div style="width: 50%;display: flex;align-items: center;flex-direction: column">
-        <div>
+      <div style="width: 50%;">
+        <div style="text-align: center">
           <h2>
             论文提交记录查询
           </h2>
         </div>
-        <div>
+        <div style="text-align: center">
           <el-button type="primary"
                      :icon="Search"
                      :loading-icon="Eleme"
@@ -156,10 +156,10 @@ const startHistorySearch = async () => {
             Search
           </el-button>
         </div>
-        <div style="margin-top: 10px">
-          <el-table :data="historyTableData" style="width: 100%" v-if="historyTableData.length!==0">
-            <el-table-column prop="date" label="上传日期" width="180"/>
-            <el-table-column prop="filename" label="文件名" width="180"/>
+        <div style="margin-top: 10px;text-align: center;margin-left: 10%;margin-right: 10%">
+          <el-table :data="historyTableData" v-if="historyTableData.length!==0">
+            <el-table-column prop="date" label="上传日期"/>
+            <el-table-column prop="filename" label="文件名"/>
           </el-table>
         </div>
       </div>
@@ -198,4 +198,14 @@ const startHistorySearch = async () => {
   margin: 10px;
   align-items: center;
 }
+.el-upload{
+  width: 100%;
+}
+.my-upload-dragger ::v-deep .el-upload--text{
+  width: 80%;
+}
+.my-upload-dragger ::v-deep .el-upload-dragger {
+  width: inherit;
+}
+
 </style>
