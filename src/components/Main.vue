@@ -152,6 +152,7 @@ const startHistorySearch = async () => {
                      :loading="isSearchLoading"
                      @click="startHistorySearch"
                      plain
+                     style="max-width: 80%"
           >
             Search
           </el-button>
@@ -167,21 +168,15 @@ const startHistorySearch = async () => {
 
     <div style="width: 80%;">
       <h2>使用指南：</h2>
-      <div>
-        首先输入姓名和学号，然后点击<b>论文提交</b>下面的大按钮进行作业提交
-      </div>
-      <div>
-        提交完以后，也可以点击<b>论文提交记录查询</b>进行作业提交查询，系统会列出所有提交的版本
-      </div>
-      <div>
-        注意，作业以<b>最后一次提交</b>为准
-      </div>
+        首先输入姓名和学号，然后点击<b>论文提交</b>下面的大按钮进行作业提交 <br/>
+        提交完以后，也可以点击<b>论文提交记录查询</b>进行作业提交查询，系统会列出所有提交的版本 <br/>
+        注意，作业以<b>最后一次提交</b>为准<br/>
       <h2>🎉前后端代码均已开源：</h2>
       <div>
-        前端：<a href="https://github.com/NingYuanLin/homework_submit_system_web">https://github.com/NingYuanLin/homework_submit_system_web</a>
+        前端：<a href="https://github.com/NingYuanLin/homework_submit_system_web" style="word-wrap:break-word">https://github.com/NingYuanLin/homework_submit_system_web</a>
       </div>
       <div>
-        后端：<a href="https://github.com/NingYuanLin/homework_submit_system_flask">https://github.com/NingYuanLin/homework_submit_system_flask</a>
+        后端：<a href="https://github.com/NingYuanLin/homework_submit_system_flask" style="word-wrap:break-word">https://github.com/NingYuanLin/homework_submit_system_flask</a>
       </div>
     </div>
 
@@ -198,12 +193,15 @@ const startHistorySearch = async () => {
   margin: 10px;
   align-items: center;
 }
-.el-upload{
+
+.el-upload {
   width: 100%;
 }
-.my-upload-dragger ::v-deep .el-upload--text{
+
+.my-upload-dragger ::v-deep .el-upload--text {
   width: 80%;
 }
+
 .my-upload-dragger ::v-deep .el-upload-dragger {
   width: inherit;
 }
