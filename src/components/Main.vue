@@ -82,9 +82,9 @@ const startHistorySearch = async () => {
 
 <template>
   <div class="main-div">
-    <div style="justify-content: center">
-      <h1>
-        研究生科技论文写作课程
+    <div>
+      <h1 style="text-align: center">
+        研究生科技论文写作课程-第二次作业
       </h1>
     </div>
 
@@ -194,10 +194,8 @@ const startHistorySearch = async () => {
   align-items: center;
 }
 
-
-.my-upload-dragger ::v-deep .el-upload-dragger {
-  max-width: 80%;
-  width: auto;
+.my-upload-dragger ::v-deep .el-upload--text {
+  width: 80%;
 }
 
 
